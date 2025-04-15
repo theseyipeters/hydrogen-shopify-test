@@ -8,7 +8,7 @@ import type {
 } from 'storefrontapi.generated';
 
 export const meta: MetaFunction = () => {
-  return [{title: 'Hydrogen | Home'}];
+  return [{title: 'OOL Autos - Ola of Lagos Automobiles'}];
 };
 
 export async function loader(args: LoaderFunctionArgs) {
@@ -94,7 +94,9 @@ function RecommendedProducts({
 }) {
   return (
     <div className="recommended-products">
-      <h2>Recommended Products</h2>
+      <h2 className="text-brand-green text-2xl font-bold mb-4 tracking-tight">
+        Recommended Products
+      </h2>
       <Suspense fallback={<div>Loading...</div>}>
         <Await resolve={products}>
           {(response) => (
@@ -111,7 +113,7 @@ function RecommendedProducts({
                         aspectRatio="1/1"
                         sizes="(min-width: 45em) 20vw, 50vw"
                       />
-                      <h4>{product.title}</h4>
+                      <h4 className="">{product.title}</h4>
                       <small>
                         <Money data={product.priceRange.minVariantPrice} />
                       </small>

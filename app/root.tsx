@@ -6,6 +6,10 @@ import {
   isRouteErrorResponse,
   type ShouldRevalidateFunction,
 } from '@remix-run/react';
+import tailwindStyles from './styles/tailwind.css?url';
+import fontStyles from './styles/fonts.css?url';
+import appStyles from './styles/app.css?url';
+import resetStyles from './styles/reset.css?url';
 import favicon from '~/assets/favicon.svg';
 import {FOOTER_QUERY, HEADER_QUERY} from '~/lib/fragments';
 
@@ -45,6 +49,10 @@ export const shouldRevalidate: ShouldRevalidateFunction = ({
  */
 export function links() {
   return [
+    {rel: 'stylesheet', href: appStyles},
+    {rel: 'stylesheet', href: resetStyles},
+    {rel: 'stylesheet', href: tailwindStyles},
+    {rel: 'stylesheet', href: fontStyles},
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',
